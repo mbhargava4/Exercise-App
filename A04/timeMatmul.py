@@ -1,12 +1,19 @@
+"""
+PROBLEM 3
+This file helps us find out the time is takes for the code to multiply 2 matrices. We import pyMatmul to multiply the matrices. 
+This file also generates 2 random matrices of nxn size. This file checks the time it takes to multiply 2 matrices of nxn size where n
+is 2^7, 2^8, and 2^9.
+"""
 import random
 import pyMatmul
 from time import perf_counter
 
+#function to generate random matrix of nxn size
 def generateRandomMatrix(n):
     C=[list(0 for i in range(n)) for j in range(n)]
     for i in range(n):
         for j in range(n):
-            C[i][j] = random.randint(0,9)
+            C[i][j] = random.randint(0,9) #numbers in this matrix are between 0 and 9
 
     return C
 

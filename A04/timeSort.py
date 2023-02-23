@@ -1,3 +1,8 @@
+"""
+PROBLEM 4
+The file helps us time how long it takes to bubble sort a list. This file generates a random list of size n. We import pySort to
+sort this list. In this file we check the time it takes to sort a list of size 10^3, 10^4, 10^5, and 10^6
+"""
 import pySort
 from time import perf_counter
 import random
