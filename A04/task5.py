@@ -1,10 +1,13 @@
 class student:
     def __init__(self, lastName):
-        self.lastName = lastName
+        self.lastName = "Popsecu"
         self.gpa = 3.8
 
+    def set_lastName(self, lastName):
+        self.lastName = lastName
+        
     def set_gpa(self,gpa):
-        if(gpa>4.0):
+        if(gpa>4.0 or gpa<0):
             self.gpa = 3.8
         else:
             self.gpa = gpa
