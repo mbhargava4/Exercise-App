@@ -1,3 +1,4 @@
 def middle(a):
-        return a[1:len(a)-1]
+        c = a[1:len(a)-1]
+        return c
 

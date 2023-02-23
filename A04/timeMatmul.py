@@ -10,16 +10,39 @@ def generateRandomMatrix(n):
 
     return C
 
-n=2**9
-print("number of elements " + str(n))
-A = generateRandomMatrix(n)
-B = generateRandomMatrix(n)
+n_1=2**7
+print("number of elements " + str(n_1))
+A_1 = generateRandomMatrix(n_1)
+B_1 = generateRandomMatrix(n_1)
 
-t_start = perf_counter()
-C = pyMatmul.Matmul(A,B)
-t_stop = perf_counter()
+t_start_1 = perf_counter()
+C_1 = pyMatmul.Matmul(A_1,B_1)
+t_stop_1 = perf_counter()
 
-print("time elasped for this program is " + str(t_stop- t_start))
+print("time elasped to multiply a " + str(n_1) + " x " + str(n_1) + " is " + str(t_stop_1- t_start_1))
 
+print('\n')
 
+n_2=2**8
+print("number of elements " + str(n_2))
+A_2 = generateRandomMatrix(n_2)
+B_2 = generateRandomMatrix(n_2)
+
+t_start_2 = perf_counter()
+C_2 = pyMatmul.Matmul(A_2,B_2)
+t_stop_2 = perf_counter()
+
+print("time elasped to multiply a " + str(n_2) + " x " + str(n_2) + " is " + str(t_stop_2 - t_start_2))
+print('\n')
+
+n_3=2**9
+print("number of elements " + str(n_3))
+A_3 = generateRandomMatrix(n_3)
+B_3 = generateRandomMatrix(n_3)
+
+t_start_3 = perf_counter()
+C_3 = pyMatmul.Matmul(A_3,B_3)
+t_stop_3 = perf_counter()
+
+print("time elasped to multiply a " + str(n_3) + " x " + str(n_3) + " is " + str(t_stop_3 - t_start_3))
 
