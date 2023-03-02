@@ -4,8 +4,6 @@ import sys
 import argparse
 import random
 from time import perf_counter
-import matplotlib
-matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 
@@ -30,7 +28,7 @@ def generateRandomMatrix(n):
     return C
 
 k = [5,6,7]
-size = list(0 for i in range(4))
+size = list(0.0 for i in range(4))
 t = list(0.0 for i in range(4))
 t_1 = list(0.0 for i in range(4))
 
@@ -53,8 +51,6 @@ for i in k:
     t_stop_1 = perf_counter()
     time = (t_stop_1 - t_start_1)*1000
     t[i-5] = time
-    
-    #t[i] = time
     
     t_start_2 = perf_counter()
     C=A@B
@@ -85,15 +81,23 @@ t_start_2 = perf_counter()
 C=A@B
 t_stop_2 = perf_counter()
 t_1[3] = (t_stop_2-t_start_2)*1000
-print(str(C_list[0][0]) + "\n" + str((t_stop_1-t_start_1)*1000) + "\n" + str(C[0][0]) + "\n" + str((t_stop_2 - t_start_2)*1000))
+print(str(C_list[0][0]) + "\n" + str(t[3]) + "\n" + str(C[0][0]) + "\n" + str(t_1[3]))
 
+fig, ax = plt.subplots()
 
-x = np.log2(size)
-y = np.log10(t)
-y_1 = np.log10(t_1)
+x = (size)
+y = (t)
+y_1 = (t_1)
+ax.set_xscale('log', base=2)
+ax.set_xlabel('Size (n)')
+ax.set_yscale('log', base=10)
+ax.set_ylabel('Time (ms)')
+ax.set_title('Time vs size plot for multipliying matrices')
+
 
 if(plotbool):
-    plt.plot(x,y)
-    plt.plot(x,y_1)
+    plt.plot(x,y, 'b-', label ='pyMatmul')
+    plt.plot(x,y_1, 'g-', label = 'numpy')
+    plt.legend()
     plt.show()
 
