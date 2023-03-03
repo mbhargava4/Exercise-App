@@ -47,7 +47,7 @@ for i in k:
             B[a][b]=B_list[a][b]
     
     t_start_1 = perf_counter()
-    C_list = pyMatmul.Matmul(A_list,B_list)
+    C_list = pyMatmul.matmul(A_list,B_list)
     t_stop_1 = perf_counter()
     time = (t_stop_1 - t_start_1)*1000
     t[i-5] = time
