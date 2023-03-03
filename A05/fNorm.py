@@ -5,7 +5,7 @@ import csv
 file_name = sys.argv[1]
 
 with open(file_name + ".csv") as file:
-    csvreader = csv.reader(file, delimiter="\t")
+    csvreader = csv.reader(file)
 
     for matrix in csvreader:
         arr = np.array(matrix)
