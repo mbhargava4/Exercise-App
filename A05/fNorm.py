@@ -15,7 +15,8 @@ with open(file_name + ".csv") as file:
         for i in range(matrix):
             for j in range(matrix):
                 m[i][j] = float(matrix[i][j])
-        arr = np.array(m)
+
+    arr = np.array(m)
 
 f_norm = np.linalg.norm(arr, 'fro')
 print(f_norm)
