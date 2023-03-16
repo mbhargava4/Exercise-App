@@ -18,9 +18,9 @@ int main() {
     a->c = 'a';
     a->d = 3.14;
 
-    printf("Field 1: %d\n", a->i);
-    printf("Field 2: %c\n", a->c);
-    printf("Field 3: %f\n", a->d);
+    printf("int i: %d\n", a->i);
+    printf("char c: %c\n", a->c);
+    printf("double d: %f\n", a->d);
 
     free(a);
 
