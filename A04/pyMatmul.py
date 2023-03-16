@@ -3,7 +3,7 @@ PROBLEM 3
 This file contains the code that will help us multiply 2 matrices. It uses nested for loops to get the job done.
 """
 
-def Matmul(A,B):
+def matmul(A,B):
     n = len(A) #I have assumed that the matrices A and B are of the same size and each of them is in nxn format. 
     C=[list(0 for i in range(n)) for j in range(n)] #Creates a matrix of nxn size which has all its values as zero 
     for i in range(n):
