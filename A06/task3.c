@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// helper function for qsort 
+int compare(const void* a, const void* b) {
+    int A = *((int*) a);
+    int B = *((int*) b);
+    return B - A;
+}
+
 int main(int argc, char *argv[]) {
     // check that there is exactly one command line argument
     if (argc != 2) {
@@ -45,9 +52,3 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
-// helper function for qsort 
-int compare(const void* a, const void* b) {
-    int A = *((int*) a);
-    int B = *((int*) b);
-    return B - A;
-}
