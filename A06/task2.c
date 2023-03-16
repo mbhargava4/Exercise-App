@@ -3,25 +3,25 @@
 #include "structs.h"
 
 int main() {
-    //Part A
+    //Part B
     printf("Size of struct A: %zu bytes\n", sizeof(struct A)); // Print size of struct A
     printf("Size of struct B: %zu bytes\n", sizeof(struct B)); //Print size of struct B
 
-    //Part B
-    //Part C
-    //Part D
-    //Part E
-    //Part F
 
+    //Part C
     struct A* a = (struct A*)malloc(sizeof(struct A));
-    a->i = 10;
-    a->c = 'a';
+
+    //Part D
+    a->i = 16;
+    a->c = 'm';
     a->d = 3.14;
 
+    //Part E
     printf("int i: %d\n", a->i);
     printf("char c: %c\n", a->c);
     printf("double d: %f\n", a->d);
 
+    //Part F
     free(a);
 
 
