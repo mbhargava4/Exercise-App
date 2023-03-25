@@ -1,6 +1,6 @@
 #include "sort.h"
 
-static void sort(int* A, size_t n)
+void sort(int* A, size_t n)
 {
     for (size_t i = 0; i < n - 1; ++i) {
         for (size_t j = 0; j < n - i - 1; ++j) {
