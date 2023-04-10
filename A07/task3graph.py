@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from time import perf_counter
 
-n_values = [2**i for i in range(10, 15)]
+n_values = [2**i for i in range(10, 14)]
 t_values = []
 
 for n in n_values:
