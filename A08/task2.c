@@ -38,8 +38,8 @@ int main(int argc, char* argv[]) {
     end_time = clock();
     double time2 = (double) (end_time - start_time) * 1000 / CLOCKS_PER_SEC;
 
-    printf("sumArray1:\t%lf\t%lf\n", sum1, time1);
-    printf("sumArray2:\t%lf\t%lf\n", sum2, time2);
+    printf("t1\n%lf\t%lf\n", sum1, time1);
+    printf("t2\n%lf\t%lf\n", sum2, time2);
 
     free(A);
     return 0;
