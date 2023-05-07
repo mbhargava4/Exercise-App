@@ -6,10 +6,12 @@ import mediapipe as mp
 import math
 import time
 
-p1 = pathlib.PureWindowsPath(r'C:\Users\manan\PycharmProjects\FinalProject459\VideoSample\pushupdemo5.mp4')
+p1 = pathlib.PureWindowsPath(r'C:\Users\manan\PycharmProjects\FinalProject459\VideoSample\pushupdemo3.mp4')
 cap1 = cv2.VideoCapture(p1.as_posix())
 angle1arm = 0
 angle1listarm = []
+anglelistback = []
+anglelistneck = []
 dir = 0
 reps = 0
 ptime = time.perf_counter()
@@ -27,13 +29,19 @@ for frameIndex in range(int(cap1.get(cv2.CAP_PROP_FRAME_COUNT))):
         angle1listarm.append(anglearm)
         percentdone = np.interp(anglearm, (20,80), (0,100))
         ctime = time.perf_counter()
+        angleback = detector.getAngle(frame, 11, 23, 25, False)
+        anglelistback.append(angleback)
+        angleneck = detector.getAngle(frame, 7, 11, 23, True)
+        anglelistneck.append(angleneck)
+        
 
         if percentdone==100:
             if dir==0:
                 reps+=1
                 dir=1
-                if((ctime-ptime)<1 ):
+                if((ctime-ptime)<0.01):
                     reps -= 1
+
         if percentdone == 0:
             if dir == 1:
                 dir=0
@@ -48,5 +56,9 @@ for frameIndex in range(int(cap1.get(cv2.CAP_PROP_FRAME_COUNT))):
 cap1.release()
 cv2.destroyAllWindows()
 
-max_angle1left = max(angle1listarm)
-min_angle1left = min(angle1listarm)
+max_anglearm = max(angle1listarm)
+min_anglearm = min(angle1listarm)
+max_angleback = max(anglelistback)
+min_angleback = min(anglelistback)
+max_angleneck = max(anglelistneck)
+min_angleneck = min(anglelistneck)
