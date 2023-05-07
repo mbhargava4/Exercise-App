@@ -1,3 +1,16 @@
+# This code is an implementation of a Pose Detector using OpenCV, Mediapipe and Math.
+# The code is in the form of a class, which is called PoseDetector.
+# The constructor of the class takes the following parameters: mode (default is False), upbody (default is False), smooth (default is 
+# True), detectorCon (default is True), and trackingCon (default is 0.5).
+# The class contains three methods.
+# The first method is findPose(), which takes an image as input and returns an image with the detected landmarks. It uses Mediapipe to 
+# detect the landmarks and OpenCV to draw the landmarks on the image.
+# The second method is getPosition(), which takes an image as input and returns a list of the positions of each landmark. It uses OpenCV
+# to draw circles around the landmarks on the image.
+# The third method is getAngle(), which takes three landmarks as input and returns the angle between them. It uses Math to calculate the
+# angle and OpenCV to draw lines and circles around the landmarks on the image.
+# The main() function captures video from a specified file path and uses the PoseDetector class to detect and draw the landmarks and 
+# angles on each frame. It displays each frame in a window and waits for the user to press the 'e' key to close the window.
 # Import opencv
 import cv2
 # Import pathlib
