@@ -52,7 +52,18 @@ class PoseDetector:
         x2, y2 = self.lmList[p2][1:]
         x3, y3 = self.lmList[p3][1:]
 
-        angle = math.degrees(math.atan2(y3-y2, x3-x2) - math.atan2(y1-y2, x1-x2))
+        angle = (180 - math.degrees(math.atan2(y3-y2, x3-x2)) + math.degrees(math.atan2(y1-y2, x1-x2)))
+        angle = math.fabs(angle)
+        # print(angle)
+
+
+        if angle<90:
+            angle = angle
+        else:
+            if int(angle)>270:
+                angle = 360 - angle
+            elif int(angle)>180 & (int(angle)<270):
+                angle = 180 - angle
 
         if draw:
             cv2.line(img, (x1, y1), (x2, y2), (0, 0, 255), 3)
