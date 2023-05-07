@@ -1,4 +1,4 @@
-import tryout2module
+import PostureDetectorModule
 import cv2
 import numpy as np
 import pathlib
@@ -16,7 +16,7 @@ dir = 0
 reps = 0
 ptime = time.perf_counter()
 repCounted = False
-detector = tryout2module.PoseDetector()
+detector = PostureDetectorModule.PoseDetector()
 
 for frameIndex in range(int(cap1.get(cv2.CAP_PROP_FRAME_COUNT))):
     success, frame = cap1.read()
