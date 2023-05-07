@@ -1,4 +1,4 @@
-import PostureDetectorModule
+import tryout2module
 import cv2
 import numpy as np
 import pathlib
@@ -9,7 +9,7 @@ p1 = pathlib.PureWindowsPath(r'C:\Users\manan\PycharmProjects\FinalProject459\Vi
 cap1 = cv2.VideoCapture(p1.as_posix())
 angle1left = 0
 angle1listleft = []
-detector = PostureDetectorModule.PoseDetector()
+detector = tryout2module.PoseDetector()
 
 for frameIndex in range(int(cap1.get(cv2.CAP_PROP_FRAME_COUNT))):
     success, frame = cap1.read()
